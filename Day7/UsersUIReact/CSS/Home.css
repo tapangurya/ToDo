@@ -1,0 +1,356 @@
+/* -----------------------------------
+   VARIABLES
+----------------------------------- */
+:root {
+  --primary-color: #2c3e50; /* Dark Blue */
+  --secondary-color: #3498db; /* Bright Blue */
+  --accent-color: #e74c3c; /* Red accent */
+  --background-color: #f4f4f4; /* Light Gray */
+  --text-color: #333;
+  --header-height: 60px;
+  --footer-height: 50px;
+  --max-width: 1200px;
+  --transition-speed: 0.3s;
+}
+
+/* -----------------------------------
+   GLOBAL STYLES
+----------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* -----------------------------------
+   HEADER
+----------------------------------- */
+.header {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+.header nav a:hover {
+  color: var(--secondary-color);
+}
+
+/* NAV BAR */
+/* Update the existing nav a styles or add these */
+.header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+/* The Icon Animation */
+.nav-icon {
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+.nav-link:hover .nav-icon {
+  transform: translateY(-3px); /* Subtle hop */
+  color: var(--secondary-color);
+}
+
+/* Optional: Animated Underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--secondary-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Keyframe for a subtle pulse on the icon when active */
+@keyframes icon-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.nav-link:active .nav-icon {
+  animation: icon-pulse 0.2s ease-in-out;
+}
+
+/* -----------------------------------
+   MAIN
+----------------------------------- */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* -----------------------------------
+   FOOTER
+----------------------------------- */
+.footer {
+  height: var(--footer-height);
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-top: auto;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* -----------------------------------
+   RESPONSIVE DESIGN
+----------------------------------- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .header nav {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header nav a {
+    margin: 0.5rem 0;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+/* Home.css */
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  text-align: center;
+  padding: 0 20px;
+  background: #ffffff;
+}
+
+/* Modern Gradient Blobs */
+.bg-blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(40px);
+}
+.blob-1 {
+  top: -100px;
+  left: -100px;
+}
+.blob-2 {
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Logo Styling */
+.logo-wrapper {
+  margin-bottom: 2rem;
+  z-index: 1;
+}
+
+.standard-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -1px;
+}
+
+.logo-icon {
+  color: #6366f1; /* Indigo-500 */
+}
+
+/* Typography */
+.hero-content {
+  max-width: 800px;
+  margin-bottom: 3rem;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content h1 span {
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Modern Buttons */
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  z-index: 1;
+}
+
+.btn-primary-gradient {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.btn-primary-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.4);
+}
+
+.btn-secondary-outline {
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  border: 2px solid #e2e8f0;
+  color: #475569;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-secondary-outline:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #1e293b;
+}
+
+/* Stats Section */
+.hero-stats {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  border-radius: 50px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item b {
+  font-size: 1.5rem;
+  color: #1e293b;
+}
+
+.stat-item span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.divider {
+  width: 1px;
+  height: 30px;
+  background: #e2e8f0;
+}
+
+@media (max-width: 640px) {
+  .home-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-stats {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,137 @@
+/* UserList.css */
+:root {
+  --primary: #4f46e5;
+  --danger: #ef4444;
+  --success: #10b981;
+  --bg-main: #f8fafc;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+}
+
+.user-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.header-section {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 20px;
+}
+
+.header-section h2 {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 1.5rem;
+}
+
+.subtitle {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.user-table th {
+  background: var(--bg-main);
+  padding: 12px 16px;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.user-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.user-table tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Badges */
+.badge {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.male {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.female {
+  background: #fdf2f8;
+  color: #be185d;
+}
+.other {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Actions */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit {
+  background: #eef2ff;
+  color: var(--primary);
+}
+.btn-edit:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: var(--danger);
+}
+.btn-delete:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* SweetAlert Form Styling */
+.swal-form {
+  text-align: left;
+}
+.swal-form label {
+  display: block;
+  margin: 10px 0 0 25px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #666;
+}
