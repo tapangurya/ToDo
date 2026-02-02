@@ -1,0 +1,78 @@
+.todo-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.todo-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.empty-message {
+  text-align: center;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #faf8f8;
+}
+
+.todo-item.completed {
+  background-color: #d4edda;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.todo-heading {
+  color: #212529;
+  text-decoration: none;
+}
+
+.todo-heading.completed-text {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.todo-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.toggle-btn.done {
+  background-color: #28a745;
+}
+
+.toggle-btn.undo {
+  background-color: #ffc107;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.todo-description {
+  margin: 0;
+  color: #495057;
+}
